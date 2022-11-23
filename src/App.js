@@ -3,20 +3,17 @@ import "./App.css";
 import { Tab, TabContent } from "./Tabs";
 
 function App() {
-  const [currentTab, setCurrentTab] = useState(1);
+  const [currentTab, setCurrentTab] = useState(0);
   const changeTab = (key) => {
     setCurrentTab(key);
   };
 
-  const [tabNum, setTabNum] = useState(2);
+  const [tabNum, setTabNum] = useState(0);
   const tabTitleGen = () => {
     setTabNum(tabNum + 1);
     return "Tab " + tabNum;
   };
-  const [tabsArray, setTabArray] = useState([
-    { id: 0, title: "Tab 0" },
-    { id: 1, title: "Tab 1" },
-  ]);
+  const [tabsArray, setTabArray] = useState([]);
 
   const addTab = () => {
     setTabArray([...tabsArray, { id: tabNum, title: tabTitleGen() }]);
@@ -37,7 +34,15 @@ function App() {
             deleteTab={() => removeTab(tab.id)}
           />
         ))}
-        <button onClick={addTab}>+</button>
+        {tabsArray.length === 0 ? (
+          <button onClick={addTab} className="newTab">
+            Add Tab
+          </button>
+        ) : (
+          <button onClick={addTab} className="addTab">
+            +
+          </button>
+        )}
       </div>
 
       <div className="content-tabs">

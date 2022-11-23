@@ -1,40 +1,104 @@
-.root {
-  text-align: center;
-}
 
 .bloc-tabs {
   display: flex;
 }
 
 .tabs {
-  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 2px;
   text-align: center;
-  width: 50%;
-  background: rgba(128, 128, 128, 0.075);
+  width: 20%;
+  min-width: 70px;
+  max-height: 24px;
+  background: rgba(128, 128, 128, 0.763);
+  font-family: "Roboto", sans-serif;
+  border: none;
   cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
   box-sizing: content-box;
-  position: relative;
-  outline: none;
+  border-radius: 25px 0px 25px 0px;
+  color: rgb(255, 255, 255);
 }
-
-.tabs:not(:last-child) {
-  border-right: 1px solid rgba(173, 255, 47, 0.5);
+.tabs:hover {
+  background: rgba(128, 128, 128, 0.928);
 }
 
 .active-tabs {
-  background: rgb(173, 255, 47);
+  background: rgb(50, 50, 50);
   border: none;
+  color: rgb(255, 202, 40);
+}
+
+.tabTitle {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  height: 24px;
+  flex-grow: 3;
+  padding-left: 10%;
+}
+
+.closeTab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: center;
+  margin: auto;
+  height: 24px;
+  padding-right: 10%;
+  font-weight: 700;
+  color: transparent;
+}
+
+.closeTab:hover {
+  color: white;
 }
 
 .content {
-  background: white;
   padding: 20px;
   width: 100%;
   height: 100%;
-  display:none;
+  display: none;
 }
 
 .active-content {
   display: block;
+  text-align: center;
+}
+
+.addTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 32px;
+  font-size: 24px;
+  border: none;
+  border-radius: 20px 0px 20px 0px;
+}
+
+.addTab:hover {
+  background-color: #4f4f4f40;
+}
+
+.newTab {
+  display: flex;
+  margin-top: 25% !important;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  width: 128px;
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: #4f4f4f;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  border: none;
+}
+
+.newTab:hover {
+  background-color: #4f4f4fcf;
+  border: solid black;
 }

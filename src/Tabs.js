@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import "./App.css";
 
-const Tab = ({ id, text, activeTab, changeTab, deleteTab}) => {
+const Tab = ({ id, text, activeTab, changeTab, deleteTab }) => {
   return (
-    <a
+    <div
       className={activeTab === id ? "tabs active-tabs" : "tabs"}
       onClick={changeTab}
     >
-      {`${text}`}
-      <button onClick={deleteTab} style={{cursor:"pointer" , color:"Red"}}>X</button>
-    </a>
+      <p className="tabTitle">{`${text}`}</p>
+      <p onClick={deleteTab} className="closeTab">
+        X
+      </p>
+    </div>
   );
 };
 
